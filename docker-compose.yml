@@ -1,0 +1,17 @@
+version: "2"
+services:
+  mssql:
+    build: ./mssql/
+    container_name: mssql
+    ports:
+    - "1433:1433"
+    environment:
+    - ACCEPT_EULA=Y
+    - SA_PASSWORD=Strong_Password_123
+
+  check:
+    build: .
+    environment:
+    - MSSQL_HOST=mssql
+    links:
+    - mssql

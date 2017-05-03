@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./db-create &
+/opt/mssql/bin/sqlservr.sh
